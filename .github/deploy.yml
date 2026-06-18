@@ -1,8 +1,9 @@
 name: Deploy Zola site to Pages
+
 on:
   push:
     branches:
-      - main
+      - main  # Triggers the action when you push to the main branch
 
 permissions:
   contents: write
@@ -15,7 +16,7 @@ jobs:
       - name: Checkout main branch
         uses: actions/checkout@v4
         with:
-          submodules: true
+          submodules: true  # Ensures your theme submodule is fetched
 
       - name: Build and deploy
         uses: shalzz/zola-deploy-action@v0.22.1
